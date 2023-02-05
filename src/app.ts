@@ -2,6 +2,7 @@ import { Container } from "inversify"
 import { TYPES } from "./types.js"
 import { IEcho } from "./services/echo.js"
 import { Logger } from "pino"
+import esMain from "es-main"
 
 export default async function main(
   appContainer: Container,
@@ -14,8 +15,9 @@ export default async function main(
   return result
 }
 
-if (require.main === module) {
-  const appContainer = require("./inversify.config").appContainer as Container
+if (esMain(import.meta)) {
+  const appContainer = (await import("./inversify.config"))
+    .appContainer as Container
   const log = appContainer.get<Logger>(TYPES.Logger)
   main(appContainer, "test")
     .then(() => {

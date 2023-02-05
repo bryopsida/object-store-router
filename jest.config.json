@@ -1,18 +1,18 @@
 {
-  "preset": "ts-jest",
-  "testEnvironment": "node",
-  "testTimeout": 240000,
-  "verbose": true,
-  "moduleNameMapper": {
-    "\\.(.+)\\.js": "$1"
-  },
   "extensionsToTreatAsEsm": [".ts"],
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  },
   "transform": {
-    "\\.[jt]sx?$": [
+    "^.+\\.tsx?$": [
       "ts-jest",
       {
         "useESM": true
       }
     ]
-  }
+  },
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testTimeout": 240000,
+  "verbose": true
 }
