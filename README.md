@@ -2,16 +2,9 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=coverage)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=bryopsida_object-store-router&metric=bugs)](https://sonarcloud.io/summary/new_code?id=bryopsida_object-store-router)
 
-This template provides a few things to kick start a TypeScript Node.JS project, an IoC library (Inversify.JS), linting (ESLint and Prettier), automatic dependency updates (Renovate), logger (Pino), Dockerfile, Document generation (Typedoc). This template purposely avoids taking opinions on frameworks that would constrain the type of services/projects created.
+This service acts as a gateway to balance requests to place new objects across a set of [object-stores](https://github.com/bryopsida/object-store), as well as track which store has which object to successfully serve fetch requests.
 
-- [Jest](https://github.com/facebook/jest)
-- [Github Action CI](.github/workflows/ci.yaml)
-- [Renovate](https://github.com/renovatebot/renovate)
-- [Eslint (with standard config)](https://github.com/standard/eslint-config-standard)
-- [Typescript](https://github.com/Microsoft/TypeScript)
-- [InversifyJS](https://github.com/inversify/InversifyJS)
-- [Sonar Project File](./sonar-project.properties)
-- [Dockerfile](./Dockerfile)
+For a more concrete example, I wish to deploy the object-store as a Daemonset using the node attached storage. object-store-router will be deployed as a deployment. Load balancing of new storage requests will be balanaced on storage space available.
 
 ## NPM Scripts
 
@@ -26,29 +19,3 @@ The following scripts are included in the NPM project configuration
 - `start` runs the compiled js in `dist`
 - `start:dev` runs using nodemon and will automatically rebuild and launch whenever a change is made under the source folder
 
-## Structure
-
-### [Services](./src/services/)
-
-This is meant to include service abstractions, ideally each service should provide an interface/contract
-exposing the functionality that other things in the application need.
-
-### [Models](./src/models/)
-
-This houses interfaces/models with little to no logic, the intent is these items can be passed/returned from the abstractions in services and avoid tight coupling to third party types.
-
-### [types.ts](./src/types.ts)
-
-This defines symbols for each type that will be configured in the IoC container, these are used to identify the type when using `@inject(TYPES.Services.Echo)` for example. For more information refer to [inversify](https://github.com/inversify/InversifyJS).
-
-### [inversify.config.ts](./src/inversify.config.ts)
-
-This file maps the types defined in `./src/types.ts` to interface types. For more information refer to [inversify](https://github.com/inversify/InversifyJS).
-
-## After Using as Template Todo List
-
-1. [ ] Update Sonar Project Properties For [Sonar Cloud](https://sonarcloud.io)
-2. [ ] Add SONARQUBE_KEY secret to your repo or org if not already present
-3. [ ] Point badges in README.md to correct location for you repo
-4. [ ] Update [renovate.json](./renovate.json) to meet desired behavior for your needs, docs can be found [here](https://docs.renovatebot.com).
-5. [ ] Update this readme to reflect your project name and info
