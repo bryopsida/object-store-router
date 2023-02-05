@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify"
-import { TYPES } from "../types"
-import { IEchoConfig } from "../models/echoConfig"
+import { TYPES } from "../types.js"
+import { IEchoConfig } from "../models/echoConfig.js"
 
 export interface IEcho {
   /**

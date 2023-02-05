@@ -1,6 +1,6 @@
 import { Container } from "inversify"
-import { TYPES } from "./types"
-import { IEcho } from "./services/echo"
+import { TYPES } from "./types.js"
+import { IEcho } from "./services/echo.js"
 import { Logger } from "pino"
 
 export default async function main(

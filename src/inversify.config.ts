@@ -1,11 +1,11 @@
 import "reflect-metadata"
 import { Container, interfaces } from "inversify"
 import { TYPES } from "./types"
-import { Echo, IEcho } from "./services/echo"
-import { IEchoConfig } from "./models/echoConfig"
+import { Echo, IEcho } from "./services/echo.js"
+import { IEchoConfig } from "./models/echoConfig.js"
 import config from "config"
 import { Logger, LoggerOptions } from "pino"
-import { ILoggerFactory, LoggerFactory } from "./logger/logger"
+import { ILoggerFactory, LoggerFactory } from "./logger/logger.js"
 
 const appContainer = new Container()
 
