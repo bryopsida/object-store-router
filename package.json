@@ -72,7 +72,7 @@
     "fastify-plugin": "^4.5.0",
     "inversify": "^6.0.1",
     "pino": "^9.0.0",
-    "pouchdb": "^8.0.1",
+    "pouchdb": "^9.0.0",
     "reflect-metadata": "^0.2.0"
   }
 }
