@@ -57,7 +57,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@fastify/auth": "^4.2.0",
+    "@fastify/auth": "^5.0.0",
     "@fastify/basic-auth": "^5.0.0",
     "@fastify/caching": "^8.2.0",
     "@fastify/etag": "^5.0.0",
