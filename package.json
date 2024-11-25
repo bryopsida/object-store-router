@@ -61,7 +61,7 @@
     "@fastify/basic-auth": "^6.0.0",
     "@fastify/caching": "^9.0.0",
     "@fastify/etag": "^6.0.0",
-    "@fastify/helmet": "^12.0.0",
+    "@fastify/helmet": "^13.0.0",
     "@fastify/oauth2": "^8.0.0",
     "@fastify/reply-from": "^11.0.0",
     "@fastify/swagger": "^9.0.0",
