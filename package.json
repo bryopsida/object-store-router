@@ -70,7 +70,7 @@
     "es-main": "^1.2.0",
     "fastify": "^5.0.0",
     "fastify-plugin": "^5.0.0",
-    "inversify": "^6.0.1",
+    "inversify": "^7.0.0",
     "pino": "^9.0.0",
     "pouchdb": "^9.0.0",
     "reflect-metadata": "^0.2.0"
